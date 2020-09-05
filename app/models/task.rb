@@ -8,7 +8,7 @@ class Task < ApplicationRecord
     ['In progress', 'in-progress'],
     ['Complete', 'complete']
   ]
-
+  
   def readable_status
     case status
     when 'not-started'

@@ -3,10 +3,22 @@
     <div class="card-body">
       <div class="mb-3">
         <%= render(ProgressBadgeComponent.new(status: status)) %>
-        <span class='text-secondary'>
-          <small>
-            <%= completion_stats %>
-          </small>
+        <% resta = (deadline.to_date - Date.current).to_i %>
+        <% if resta > 10 %>
+          <span class="badge badge-primary">
+            <%= deadline.strftime('%d-%m-%Y') %>
+          </span>
+        <% elsif resta > 5 && resta < 10 %>
+          <span class="badge badge-warning">
+            <%= deadline.strftime('%d-%m-%Y') %>
+          </span>
+        <% else %>
+            <span class="badge badge-danger">
+              <%= deadline.strftime('%d-%m-%Y') %>
+            </span>
+        <% end %>
+        <span class='badge badge-dark'>
+          <%= completion_stats %>
         </span>
       </div>
       <h5 class='card-title text-dark'><b><%= name %></b></h5>

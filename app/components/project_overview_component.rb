@@ -22,6 +22,10 @@ class ProjectOverviewComponent < ViewComponent::Base
     project.status
   end
 
+  def deadline
+    project.deadline
+  end
+
   private
 
   def display_percent_complete
