@@ -1,0 +1,16 @@
+<% unless deadline.blank? %>
+  <% resta = (deadline.to_date - Date.current).to_i %>
+  <% if resta > 10 %>
+    <span class="badge badge-primary">
+      <%= deadline.strftime('%d-%m-%Y') %>
+    </span>
+  <% elsif resta > 5 && resta < 10 %>
+    <span class="badge badge-warning">
+      <%= deadline.strftime('%d-%m-%Y') %>
+    </span>
+  <% else %>
+      <span class="badge badge-danger">
+        <%= deadline.strftime('%d-%m-%Y') %>
+      </span>
+  <% end %>
+<% end %>

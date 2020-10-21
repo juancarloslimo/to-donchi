@@ -2,7 +2,12 @@
 <div class="card">
   <div class="card-body">
     <h2 class='card-title mb-4'>
-      <span>Editing task</span>
+      <span>This task should finish at: </span>
+      <% if @task.deadline.blank? %>
+        <span class="badge badge-danger">Don't forget to update your deadline</span>
+        <% else %>
+        <%= render(TaskOverviewComponent.new(deadline: @task.deadline)) %>
+      <% end %>
     </h2>
 
     <%= render 'form' %>

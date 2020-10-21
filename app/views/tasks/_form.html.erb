@@ -23,6 +23,25 @@
     <%= f.label :status %><br />
     <%= f.select :status, Task::STATUS_OPTIONS, {}, class: 'form-control' %>
   </div>
+
+  <div class="form-group">
+    <%= f.label :deadline %>
+    <div class="input-group date", id="datetimepicker4" data-target-input="nearest">
+      <%= f.text_field :deadline, class:'form-control' %>
+       <div class="input-group-append" data-target="#datetimepicker4" data-toggle="datetimepicker">
+        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      $(function () {
+        $('#datetimepicker4').datetimepicker({
+          format: "DD/MM/YYYY"
+        });
+      });
+    </script>
+  </div>
+  
   <div class="actions">
     <%= f.submit class: "btn btn-primary" %>
   </div>
