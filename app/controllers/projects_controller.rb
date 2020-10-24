@@ -27,7 +27,7 @@ class ProjectsController < ApplicationController
   # POST /projects.json
   def create
     @project = current_user.projects.build(project_params)
-
+    @project.deadline = "01-01-1900".to_date
     respond_to do |format|
       if @project.save
         format.html { redirect_to @project, notice: 'Project was successfully created.' }

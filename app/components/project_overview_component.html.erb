@@ -3,19 +3,37 @@
     <div class="card-body">
       <div class="mb-3">
         <%= render(ProgressBadgeComponent.new(status: status)) %>
-        <% resta = (deadline.to_date - Date.current).to_i %>
-        <% if resta > 10 %>
-          <span class="badge badge-primary">
-            <%= deadline.strftime('%d-%m-%Y') %>
-          </span>
-        <% elsif resta > 5 && resta < 10 %>
-          <span class="badge badge-warning">
-            <%= deadline.strftime('%d-%m-%Y') %>
-          </span>
-        <% else %>
-            <span class="badge badge-danger">
-              <%= deadline.strftime('%d-%m-%Y') %>
+        <% deadlines = ["01-01-1900"] %>
+        <% n = 0 %>
+        <% last_date = "" %>
+        <% project.tasks.each do |task| %>
+          <% if task.deadline != nil %>
+            <% deadlines << task.deadline %>
+          <% end %>
+          <% if deadlines[n+1] != nil %>
+            <% if deadlines[n] > deadlines[n+1]%>
+              <% last_date = deadlines[n] %>
+            <% else %>
+              <% last_date = deadlines[n+1]%>
+            <% end %>
+          <% end %>
+          <% n = n + 1 %>
+        <% end %>
+        <% if last_date != "" %>
+          <% resta = (last_date.to_date - Date.current).to_i %>
+          <% if resta > 10 %>
+            <span class="badge badge-primary">
+              <%= last_date.strftime('%d-%m-%Y') %>
             </span>
+          <% elsif resta > 5 && resta < 10 %>
+            <span class="badge badge-warning">
+              <%= last_date.strftime('%d-%m-%Y') %>
+            </span>
+          <% else %>
+              <span class="badge badge-danger">
+                <%= last_date.strftime('%d-%m-%Y') %>
+              </span>
+          <% end %>
         <% end %>
         <span class='badge badge-dark'>
           <%= completion_stats %>

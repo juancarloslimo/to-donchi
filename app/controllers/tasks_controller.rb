@@ -35,6 +35,12 @@ class TasksController < ApplicationController
   # PUT projects/1/tasks/1
   def update
     if @task.update_attributes(task_params)
+      if @task.deadline != nil
+        if @task.deadline > @project.deadline
+          @project.deadline = @task.deadline
+        end
+        @project.save
+      end 
       redirect_to(@task.project)
     else
       render action: 'edit'
