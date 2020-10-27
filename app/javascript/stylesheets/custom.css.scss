@@ -1,43 +1,21 @@
-@import "base";
 @import "bootstrap";
-
-// #home-container {
-//   margin-top: 25px;
-// }
-
-// .jumbotron {
-//   background-image: url("jumbo-copy.jpg");
-//   background-position: center center;
-//   background-repeat: no-repeat;
-//   background-size: cover;
-//   height: 500px;
-// }
 
 /* Sticky Footer Classes */
 
 html,
 body {
   height: 100%;
-  color: white;
 }
 
 #page-content {
   flex: 1 0 auto;
-  background-color: #290030;
+  background-color: #CBD7E1;
 }
 
 #sticky-footer {
   flex-shrink: none;
-  background-color: #290038;
 }
 
-.card {
-  background-color: #5B1047;
-}
-
-.card-header {
-  color: white;
-}
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {

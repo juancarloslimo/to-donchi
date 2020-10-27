@@ -2,9 +2,9 @@
 <html>
   <head>
     <title>TO.Donchi</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= render 'layouts/libraries' %>
 
 
@@ -20,11 +20,13 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class='bg-light'>
-    <div class="container pt-5 pb-5">
+  <body class='d-flex flex-column'>
+    <%= render 'layouts/navigation'%>
+    <div id="page-content">
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
       <%= yield %>
     </div>
+    <%= render 'layouts/footer'%>
   </body>
 </html>

@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-lg navbar navbar-light" style="background-color: #f5c9cb;">
+  <a class="navbar-brand" href="#">
+    <img src="https://scontent-ber1-1.cdninstagram.com/v/t51.2885-15/e35/41959639_248330655851483_1751777334857382067_n.jpg?_nc_ht=scontent-ber1-1.cdninstagram.com&_nc_cat=111&_nc_ohc=znh3DuZGZQYAX8mLcra&_nc_tp=18&oh=aa6eb9c612d52ea0e771099e8a844cd1&oe=5FC06010" width="30" height="30" class="d-inline-block align-top" alt="">
+    To-Donchi
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <% if user_signed_in? %>
+        <li class="nav-item">
+          <%= link_to "Logout", destroy_user_session_path, class: "nav-link", method: :delete %>
+        </li>
+      <% end %>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
