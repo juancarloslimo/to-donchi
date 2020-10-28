@@ -8,7 +8,7 @@ class ProgressBadgeComponent < ViewComponent::Base
   def badge_color
     case status
     when 'not-started'
-      'secondary'
+      'primary'
     when 'in-progress'
       'info'
     when 'complete'

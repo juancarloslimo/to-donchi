@@ -23,7 +23,7 @@ class Task < ApplicationRecord
   def color_class
     case status
     when 'not-started'
-      'secondary'
+      'danger'
     when 'in-progress'
       'info'
     when 'complete'

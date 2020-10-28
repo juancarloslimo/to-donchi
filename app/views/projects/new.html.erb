@@ -1,10 +1,17 @@
-<%= link_to 'Back', projects_path, class: 'btn btn-secondary mb-3' %>
-<div class="card">
-  <div class="card-body">
-    <h2 class='card-title mb-4'>
-      <span>New project</span>
-    </h2>
+<h1 class="text-center mt-4"></h1>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-10">
+      <%= link_to 'Back', projects_path, class: 'btn btn-secondary mb-3' %>
+      <div class="card" id="card-log">
+        <div class="card-body">
+          <h2 class='card-title mb-4'>
+            <span>New project</span>
+          </h2>
 
-    <%= render 'form', project: @project %>
+          <%= render 'form', project: @project %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

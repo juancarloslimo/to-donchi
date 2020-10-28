@@ -24,6 +24,7 @@ body {
 #page-content {
   flex: 1 0 auto;
   background-color: #290030;
+  // background-image: url("nav.jpg")
 }
 
 #sticky-footer {
@@ -31,8 +32,17 @@ body {
   background-color: #290038;
 }
 
-.card {
+#card-log {
   background-color: #5B1047;
+  // background-color: #eea439;
+  color: white;
+}
+
+#card-interior {
+  // background-color: #E3F0FF;
+  // background-color: #5B0F58;
+  background-color: #290030;
+  color: white;
 }
 
 .card-header {
