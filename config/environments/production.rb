@@ -120,4 +120,5 @@ Rails.application.configure do
       key_prefix: "app:session:",
       url: ENV.fetch("HEROKU_REDIS_MAROON_URL"),
     }
+  }
 end
