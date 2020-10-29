@@ -19,6 +19,9 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+gem "redis", ">= 4.0", :require => ["redis", "redis/connection/hiredis"]
+gem "hiredis"
+gem 'redis-session-store'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
